@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y gcc libpq-dev
 WORKDIR /usr/src/app
 
 # Copiar dependencias del proyecto
-COPY requirements.txt .
+COPY base.txt/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el código fuente
