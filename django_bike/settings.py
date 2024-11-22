@@ -11,10 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
-from pathlib import Path
-
-import dj_database_url
 import sentry_sdk
+from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -156,7 +155,6 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "users.User"
 
-SENTRY_DSN = os.getenv("DJANGO_ALLOWED_HOSTS", None)
 sentry_sdk.init(
     dsn="https://ff436d16fe82e9c2265e6363ca7d808c@o4508342543056896.ingest.us.sentry.io/4508342554918912",
     # Set traces_sample_rate to 1.0 to capture 100%
