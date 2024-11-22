@@ -19,13 +19,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 
-def trigger_error(request):
-    division_by_zero = 1 / 0
-
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("apps.authentication.urls")),
-    path("sentry-debug/", trigger_error),
     path("studios", include("apps.studios.urls")),
 ]
