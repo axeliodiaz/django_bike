@@ -29,10 +29,7 @@ SECRET_KEY = "django-insecure-&l!z82nv8s!ev1qo8d0x91znx0mg_dm+xork_eajvg9%8ydp*!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "0") == "1"
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",") + [
-    "35.171.64.204",
-    "ride-flow.com",
-]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
 
 
 # Application definition
@@ -156,9 +153,9 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "users.User"
 
-SENTRY_DSN = os.getenv("SENTRY_DSN", None)
+SENTRY_DSN = os.getenv("DJANGO_ALLOWED_HOSTS", None)
 sentry_sdk.init(
-    dsn=SENTRY_DSN,
+    dsn="https://ff436d16fe82e9c2265e6363ca7d808c@o4508342543056896.ingest.us.sentry.io/4508342554918912",
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for tracing.
     traces_sample_rate=1.0,
