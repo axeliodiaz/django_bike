@@ -156,8 +156,9 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "users.User"
 
+SENTRY_DSN = os.getenv("SENTRY_DSN", None)
 sentry_sdk.init(
-    dsn="https://ff436d16fe82e9c2265e6363ca7d808c@o4508342543056896.ingest.us.sentry.io/4508342554918912",
+    dsn=SENTRY_DSN,
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for tracing.
     traces_sample_rate=1.0,
