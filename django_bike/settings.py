@@ -91,19 +91,17 @@ WSGI_APPLICATION = "django_bike.wsgi.application"
 """
 {'default': {'NAME': 'django_cycling', 'USER': 'cyclist', 'PASSWORD': '4vC7EMHvNrp4QC', 'HOST': 'db', 'PORT': 5432, 'CONN_MAX_AGE': 0, 'CONN_HEALTH_CHECKS': False, 'DISABLE_SERVER_SIDE_CURSORS': False, 'ENGINE': 'django.db.backends.postgresql', 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'OPTIONS': {}, 'TIME_ZONE': None, 'TEST': {'CHARSET': None, 'COLLATION': None, 'MIGRATE': True, 'MIRROR': None, 'NAME': None}}}
 """
-DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
-"""
+# DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "nombre_de_base_de_datos",  # El nombre de tu base de datos RDS
-        "USER": "usuario",  # El nombre de usuario de la base de datos
-        "PASSWORD": "contraseña",  # La contraseña
-        "HOST": "django-cycling.eba-te9pszvv.sa-east-1.elasticbeanstalk.com",  # El endpoint de la base de datos
-        "PORT": "5432",  # Puerto por defecto de PostgreSQL
+        "NAME": "django_cycling",
+        "USER": "cyclist",
+        "PASSWORD": "4vC7EMHvNrp4QC",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
-"""
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
